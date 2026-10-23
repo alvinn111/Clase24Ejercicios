@@ -1,18 +1,12 @@
 object Ej6 {
 
-  abstract class Animal(
-    val nombre: String
-  )
+  abstract class Animal(val nombre: String)
 
-  class Perro(
-    nombre: String
-  ) extends Animal(nombre)
+  class Perro(nombre: String) extends Animal(nombre)
 
   trait Procesador[-A] {
 
-    def procesar(
-      valor: A
-    ): String
+    def procesar(valor: A): String
   }
 
   class ProcesadorAnimal extends Procesador[Animal] {
@@ -23,8 +17,7 @@ object Ej6 {
 
   def main(args: Array[String]): Unit = {
 
-    val procesadorPerro: Procesador[Perro] =
-      new ProcesadorAnimal()
+    val procesadorPerro: Procesador[Perro] = new ProcesadorAnimal()
 
     println(procesadorPerro.procesar(new Perro("Rex")))
   }
